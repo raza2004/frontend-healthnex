@@ -1,0 +1,76 @@
+{
+  "sources": {
+    "who": false,
+    "cdc": false,
+    "openfda": true
+  },
+  "data": {
+    "headache": [
+      {
+        "drug": "BONIVA",
+        "reportId": "10003300"
+      },
+      {
+        "drug": "TYVASO",
+        "reportId": "10003320"
+      },
+      {
+        "drug": "PREDNISONE",
+        "reportId": "10003327"
+      },
+      {
+        "drug": "LETAIRIS",
+        "reportId": "10003344"
+      },
+      {
+        "drug": "PREDNISONE",
+        "reportId": "10003375"
+      }
+    ],
+    "nausea": [
+      {
+        "drug": "LETAIRIS",
+        "reportId": "10003372"
+      },
+      {
+        "drug": "CASODEX",
+        "reportId": "10003376"
+      },
+      {
+        "drug": "5-FLUOROURACIL",
+        "reportId": "10003407"
+      },
+      {
+        "drug": "LETAIRIS",
+        "reportId": "10003420"
+      },
+      {
+        "drug": "JAKAFI",
+        "reportId": "10003526"
+      }
+    ],
+    "dizziness": [
+      {
+        "drug": "LETAIRIS",
+        "reportId": "10003341"
+      },
+      {
+        "drug": "LETAIRIS",
+        "reportId": "10003415"
+      },
+      {
+        "drug": "LETAIRIS",
+        "reportId": "10003436"
+      },
+      {
+        "drug": "LETAIRIS",
+        "reportId": "10003611"
+      },
+      {
+        "drug": "TYVASO",
+        "reportId": "10003643"
+      }
+    ]
+  },
+  "lastUpdated": "2025-08-11T11:27:07.184Z"
+}
