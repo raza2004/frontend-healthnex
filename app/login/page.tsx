@@ -82,7 +82,7 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
         onChange={(e) => setEmail(e.target.value)}
         type="email"
         placeholder="Email"
-        className="bg-[#F3F3F3] p-2 xl:p-3 mt-4 xl:py-4 py-3 w-full rounded-lg outline-none focus:ring-2 focus:ring-[#0DAB83] transition-all"
+        className="bg-[#F3F3F3] p-2 xl:p-3 mt-4 xl:py-4 py-3 w-full text-gray-800 rounded-lg outline-none focus:ring-2 focus:ring-[#0DAB83] transition-all"
       />
 
       {/* Password */}
@@ -92,7 +92,7 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
           onChange={(e) => setPassword(e.target.value)}
           type={showPassword ? "text" : "password"}
           placeholder="Password"
-          className="bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 py-3 w-full rounded-lg outline-none focus:ring-2 focus:ring-[#117F9E] transition-all"
+          className="bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 py-3 w-full rounded-lg text-gray-800 outline-none focus:ring-2 focus:ring-[#117F9E] transition-all"
         />
         <div
           className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500 hover:text-gray-700"
