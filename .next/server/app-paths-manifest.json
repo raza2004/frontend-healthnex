@@ -1,0 +1,7 @@
+{
+  "/doctors/page": "app/doctors/page.js",
+  "/verify-email/page": "app/verify-email/page.js",
+  "/disease-checker/page": "app/disease-checker/page.js",
+  "/login/page": "app/login/page.js",
+  "/history/page": "app/history/page.js"
+}
