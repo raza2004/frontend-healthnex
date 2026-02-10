@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 
-export default function VerifyEmailPage() {
+// Separate component that uses useSearchParams
+function VerifyEmailContent() {
   const sp = useSearchParams();
   const token = sp.get("token") || "";
 
@@ -48,7 +49,7 @@ export default function VerifyEmailPage() {
     })();
   }, [token]);
 
-  const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70D4BD 70%, #0DAB83 100%)";
+  const gradientBackground = "linear-gradient(135deg, #0DAB83 0%, #117F9E 100%)";
 
   return (
     <div className="h-screen flex flex-row relative" style={{ background: gradientBackground }}>
@@ -131,5 +132,21 @@ export default function VerifyEmailPage() {
         />
       </div>
     </div>
+  );
+}
+
+// Main component with Suspense wrapper
+export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={
+      <div className="h-screen flex items-center justify-center bg-gradient-to-br from-teal-50 via-white to-cyan-50">
+        <div className="text-center">
+          <div className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-[#0DAB83] border-r-transparent mb-4"></div>
+          <p className="text-gray-700 text-lg">Loading...</p>
+        </div>
+      </div>
+    }>
+      <VerifyEmailContent />
+    </Suspense>
   );
 }
