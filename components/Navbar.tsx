@@ -91,7 +91,7 @@ export default function Navbar() {
             <>
               <Link
                 href="/login"
-                className="rounded-full border-2 border-gray-300 px-6 py-2.5 text-sm font-bold"
+                className="rounded-full border-2 text-gray-700 border-gray-300 px-6 py-2.5 text-sm font-bold"
               >
                 Login
               </Link>
