@@ -91,16 +91,55 @@ export default function SignupPage() {
     }
   };
 
-  // ✅ Updated gradient with new colors
-const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70D4BD 70%, #0DAB83 100%)";
+  const gradientBackground =
+    "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70D4BD 70%, #0DAB83 100%)";
 
   return (
-    <div className="h-screen flex flex-row" style={{ background: gradientBackground }}>
+    <div
+      className="
+        h-screen flex flex-row
+        max-md:flex-col max-md:h-auto max-md:min-h-screen
+        max-md:justify-center max-md:items-center
+        max-md:p-4 max-md:gap-0
+      "
+      style={{ background: gradientBackground }}
+    >
       <Toaster position="top-right" reverseOrder={false} />
 
+      {/* Logo — shown above form on mobile only */}
+      <div
+        className="
+          hidden
+          max-md:flex max-md:justify-center max-md:items-center
+          max-md:w-full max-md:pt-10 max-md:pb-4
+        "
+      >
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          priority
+          width={160}
+          height={160}
+          className="w-auto h-auto drop-shadow-xl"
+        />
+      </div>
+
       {/* Left Card */}
-      <div className="w-[45vw] flex flex-col justify-center items-center bg-white/95 backdrop-blur-sm h-auto rounded-[40px] p-16 m-4 shadow-2xl">
-        <h2 className="text-2xl xl:text-4xl font-bold mb-2 bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent">
+      <div
+        className="
+          w-[45vw] flex flex-col justify-center items-center
+          bg-white/95 backdrop-blur-sm h-auto rounded-[40px] p-16 m-4 shadow-2xl
+          max-md:w-full max-md:rounded-[28px] max-md:p-6 max-md:m-0 max-md:mb-8
+          max-sm:p-5 max-sm:rounded-[20px]
+        "
+      >
+        <h2
+          className="
+            text-2xl xl:text-4xl font-bold mb-2
+            bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent
+            max-md:text-3xl
+          "
+        >
           Sign Up
         </h2>
         <p className="text-gray-600 mb-6">Create your HealthNexus account</p>
@@ -113,7 +152,12 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
             value={form.name}
             onChange={handleChange}
             placeholder="Enter Full Name"
-            className="bg-[#F3F3F3] p-2 py-3 xl:p-3 xl:py-4 w-full text-gray-800 rounded-lg outline-none focus:ring-2 focus:ring-[#0DAB83] transition-all"
+            className="
+              bg-[#F3F3F3] p-2 py-3 xl:p-3 xl:py-4 w-full
+              text-gray-800 rounded-lg outline-none
+              focus:ring-2 focus:ring-[#0DAB83] transition-all
+              max-md:py-3.5 max-md:text-base
+            "
           />
 
           {/* Email */}
@@ -123,7 +167,12 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
             onChange={handleChange}
             type="email"
             placeholder="Email"
-            className="bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 mt-4 py-3 w-full text-gray-800 rounded-lg outline-none focus:ring-2 focus:ring-[#0DAB83] transition-all"
+            className="
+              bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 mt-4 py-3 w-full
+              text-gray-800 rounded-lg outline-none
+              focus:ring-2 focus:ring-[#0DAB83] transition-all
+              max-md:py-3.5 max-md:text-base
+            "
           />
 
           {/* Password */}
@@ -134,7 +183,12 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
               onChange={handleChange}
               type={showPassword ? "text" : "password"}
               placeholder="Password"
-              className="bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 py-3 w-full text-gray-800 rounded-lg outline-none focus:ring-2 focus:ring-[#117F9E] transition-all pr-10"
+              className="
+                bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 py-3 w-full
+                text-gray-800 rounded-lg outline-none
+                focus:ring-2 focus:ring-[#117F9E] transition-all pr-10
+                max-md:py-3.5 max-md:text-base
+              "
             />
             <button
               type="button"
@@ -150,11 +204,15 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
           <button
             type="submit"
             disabled={buttonDisabled}
-            className={`rounded-full py-3 xl:py-4 mt-8 w-full font-bold text-lg transition-all duration-200 ${
-              buttonDisabled
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-gradient-to-r from-[#0DAB83] to-[#117F9E] text-white shadow-lg hover:shadow-xl transform hover:scale-105"
-            }`}
+            className={`
+              rounded-full py-3 xl:py-4 mt-8 w-full font-bold text-lg transition-all duration-200
+              max-md:mt-6 max-md:py-3.5
+              ${
+                buttonDisabled
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-gradient-to-r from-[#0DAB83] to-[#117F9E] text-white shadow-lg hover:shadow-xl transform hover:scale-105"
+              }
+            `}
           >
             {loading ? "Creating..." : "Sign Up"}
           </button>
@@ -164,7 +222,7 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
           By signing up, you agree to our Terms and Conditions.
         </p>
 
-        <h5 className="text-center mt-8 text-gray-700">
+        <h5 className="text-center mt-8 text-gray-700 max-md:mt-5">
           Already have an account?
           <span className="font-bold bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent ml-1 hover:underline cursor-pointer">
             <Link href="/login">Sign In</Link>
@@ -172,8 +230,8 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
         </h5>
       </div>
 
-      {/* Right Side Logo */}
-      <div className="items-center w-[50vw] justify-center flex">
+      {/* Right Side Logo — desktop only */}
+      <div className="items-center w-[50vw] justify-center flex max-md:hidden">
         <Image
           src="/logo.svg"
           alt="Logo"

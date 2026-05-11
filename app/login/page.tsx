@@ -20,13 +20,13 @@ export default function LoginPage() {
     return email.trim().length === 0 || password.length === 0 || loading;
   }, [email, password, loading]);
 
-const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70D4BD 70%, #0DAB83 100%)";
+  const gradientBackground =
+    "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70D4BD 70%, #0DAB83 100%)";
 
   const login = async (e?: React.FormEvent) => {
     e?.preventDefault();
     setLoading(true);
 
-    // ✅ validations (same spirit as your old project)
     const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
     if (!emailOk) {
       toast.error("Please enter a valid email address.");
@@ -65,85 +65,137 @@ const gradientBackground = "linear-gradient(135deg, #E0F7F1 0%, #A8E6D7 30%, #70
   };
 
   return (
-  <div className="h-screen flex flex-row relative" style={{ background: gradientBackground }}>
-  <Toaster position="top-right" reverseOrder={false} />
+    <div
+      className="
+        h-screen flex flex-row relative
+        max-md:flex-col max-md:h-auto max-md:min-h-screen
+        max-md:justify-center max-md:items-center
+        max-md:p-4 max-md:gap-0
+      "
+      style={{ background: gradientBackground }}
+    >
+      <Toaster position="top-right" reverseOrder={false} />
 
-  {/* Left card */}
-  <div className="w-[45vw] flex flex-col justify-center items-center bg-white/95 backdrop-blur-sm h-auto rounded-[40px] p-16 m-4 shadow-2xl">
-    <h2 className="text-3xl xl:text-4xl font-bold mb-2 bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent">
-      Sign In
-    </h2>
-    <p className="text-gray-600 mb-6">Welcome back to HealthNexus</p>
-
-    <form onSubmit={login} className="w-full">
-      {/* Email */}
-      <input
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        type="email"
-        placeholder="Email"
-        className="bg-[#F3F3F3] p-2 xl:p-3 mt-4 xl:py-4 py-3 w-full text-gray-800 rounded-lg outline-none focus:ring-2 focus:ring-[#0DAB83] transition-all"
-      />
-
-      {/* Password */}
-      <div className="relative mt-4">
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          type={showPassword ? "text" : "password"}
-          placeholder="Password"
-          className="bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 py-3 w-full rounded-lg text-gray-800 outline-none focus:ring-2 focus:ring-[#117F9E] transition-all"
+      {/* Logo — shown above form on mobile only */}
+      <div
+        className="
+          hidden
+          max-md:flex max-md:justify-center max-md:items-center
+          max-md:w-full max-md:pt-10 max-md:pb-4
+        "
+      >
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          priority
+          width={160}
+          height={160}
+          className="w-auto h-auto drop-shadow-xl"
         />
-        <div
-          className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500 hover:text-gray-700"
-          onClick={() => setShowPassword((s) => !s)}
-          aria-label="Toggle password visibility"
-        >
-          {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
-        </div>
       </div>
 
-      {/* Button */}
-      <button
-        type="submit"
-        disabled={buttonDisabled}
-        className={`rounded-full py-3 xl:py-4 mt-8 w-full font-bold text-lg transition-all duration-200 ${
-          buttonDisabled
-            ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-            : "bg-gradient-to-r from-[#0DAB83] to-[#117F9E] text-white shadow-lg hover:shadow-xl transform hover:scale-105"
-        }`}
+      {/* Left card */}
+      <div
+        className="
+          w-[45vw] flex flex-col justify-center items-center
+          bg-white/95 backdrop-blur-sm h-auto rounded-[40px] p-16 m-4 shadow-2xl
+          max-md:w-full max-md:rounded-[28px] max-md:p-6 max-md:m-0 max-md:mb-8
+          max-sm:p-5 max-sm:rounded-[20px]
+        "
       >
-        {loading ? "Signing in..." : "Sign In"}
-      </button>
-    </form>
+        <h2
+          className="
+            text-3xl xl:text-4xl font-bold mb-2
+            bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent
+            max-md:text-3xl
+          "
+        >
+          Sign In
+        </h2>
+        <p className="text-gray-600 mb-6">Welcome back to HealthNexus</p>
 
-    <p className="text-xs mt-4 text-gray-500 text-center">
-      By clicking this button, you agree with our Terms and Conditions.
-    </p>
+        <form onSubmit={login} className="w-full">
+          {/* Email */}
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Email"
+            className="
+              bg-[#F3F3F3] p-2 xl:p-3 mt-4 xl:py-4 py-3 w-full
+              text-gray-800 rounded-lg outline-none
+              focus:ring-2 focus:ring-[#0DAB83] transition-all
+              max-md:py-3.5 max-md:text-base
+            "
+          />
 
-    {/* Signup redirect line */}
-    <h5 className="text-center mt-8 text-gray-700">
-      Don&apos;t have an account?
-      <span className="font-bold bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent ml-1 hover:underline cursor-pointer">
-        <Link href="/signup">Sign Up</Link>
-      </span>
-    </h5>
-  </div>
+          {/* Password */}
+          <div className="relative mt-4">
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type={showPassword ? "text" : "password"}
+              placeholder="Password"
+              className="
+                bg-[#F3F3F3] p-2 xl:p-3 xl:py-4 py-3 w-full
+                rounded-lg text-gray-800 outline-none
+                focus:ring-2 focus:ring-[#117F9E] transition-all
+                max-md:py-3.5 max-md:text-base
+              "
+            />
+            <div
+              className="absolute inset-y-0 right-3 flex items-center cursor-pointer text-gray-500 hover:text-gray-700"
+              onClick={() => setShowPassword((s) => !s)}
+              aria-label="Toggle password visibility"
+            >
+              {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+            </div>
+          </div>
 
-  {/* Right logo with backdrop */}
-  <div className="items-center w-[50vw] justify-center flex relative">
-    {/* Backdrop circle for logo visibility */}
-    <div className="absolute w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
-    
-    <Image
-      src="/logo.svg"
-      alt="Logo"
-      priority
-      width={0}
-      height={0}
-      className="w-auto h-auto drop-shadow-2xl relative z-10"
-    />
-  </div>
-</div>
+          {/* Button */}
+          <button
+            type="submit"
+            disabled={buttonDisabled}
+            className={`
+              rounded-full py-3 xl:py-4 mt-8 w-full font-bold text-lg transition-all duration-200
+              max-md:mt-6 max-md:py-3.5
+              ${
+                buttonDisabled
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-gradient-to-r from-[#0DAB83] to-[#117F9E] text-white shadow-lg hover:shadow-xl transform hover:scale-105"
+              }
+            `}
+          >
+            {loading ? "Signing in..." : "Sign In"}
+          </button>
+        </form>
+
+        <p className="text-xs mt-4 text-gray-500 text-center">
+          By clicking this button, you agree with our Terms and Conditions.
+        </p>
+
+        <h5 className="text-center mt-8 text-gray-700 max-md:mt-5">
+          Don&apos;t have an account?
+          <span className="font-bold bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent ml-1 hover:underline cursor-pointer">
+            <Link href="/signup">Sign Up</Link>
+          </span>
+        </h5>
+      </div>
+
+      {/* Right logo — desktop only */}
+      <div className="items-center w-[50vw] justify-center flex relative max-md:hidden">
+        {/* Backdrop circle for logo visibility */}
+        <div className="absolute w-[400px] h-[400px] bg-white/10 rounded-full blur-3xl"></div>
+
+        <Image
+          src="/logo.svg"
+          alt="Logo"
+          priority
+          width={0}
+          height={0}
+          className="w-auto h-auto drop-shadow-2xl relative z-10"
+        />
+      </div>
+    </div>
   );
 }
