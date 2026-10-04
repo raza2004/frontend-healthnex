@@ -24,8 +24,8 @@ export default function HomePage() {
           </h1>
 
           <p className="mx-auto max-w-2xl text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
-            AI-powered symptom checking, medical insights, and doctor
-            recommendations — designed to support better health decisions.
+            AI powered symptom checking, medical insights, and doctor
+            recommendations, designed to support better health decisions.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
@@ -110,7 +110,7 @@ export default function HomePage() {
                   Privacy First
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Your health data is encrypted and secure with industry-leading protection standards.
+                  Your health data is encrypted and secure with industry leading protection standards.
                 </p>
               </div>
             </div>

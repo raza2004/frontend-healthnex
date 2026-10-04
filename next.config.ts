@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
+  // The parent folder has its own package-lock.json, so pin the root
+  // explicitly instead of letting Turbopack guess it.
+  turbopack: { root: path.resolve(process.cwd()) },
+  serverExternalPackages: ["mongoose"],
   env: {
     MONGODB_URI: process.env.MONGODB_URI,
     INFERMEDICA_APP_ID: process.env.INFERMEDICA_APP_ID,
@@ -10,4 +15,3 @@ const nextConfig: NextConfig = {
 };
 
 module.exports = nextConfig;
-

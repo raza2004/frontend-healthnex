@@ -17,11 +17,8 @@ export default function Footer() {
               </span>
             </h3>
             <p className="text-gray-400 mb-4 leading-relaxed">
-              AI-powered healthcare platform helping you make informed health decisions. 
+              AI powered healthcare platform helping you make informed health decisions. 
               Connecting patients with the right healthcare professionals.
-            </p>
-            <p className="text-sm text-gray-500">
-              🎓 Final Year Project 2024-2025
             </p>
           </div>
 
@@ -109,7 +106,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} HealthNexus. All rights reserved. | Built with ❤️ by Computer Science Students
+            © {currentYear} HealthNexus. All rights reserved. | Built with ❤️
           </p>
           
           <div className="flex gap-6">
@@ -124,7 +121,7 @@ export default function Footer() {
               </svg>
             </a>
             <a 
-              href="https://www.linkedin.com/in/muhammad-owais-raza-801105260/" 
+              href="https://www.linkedin.com/in/owais-raza-801105260/" 
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#117F9E] transition-colors duration-200"

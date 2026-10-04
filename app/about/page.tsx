@@ -4,27 +4,6 @@ import Navbar from "@/components/Navbar";
 import Image from "next/image";
 
 export default function AboutPage() {
-  const teamMembers = [
-    {
-      name: "Your Name",
-      role: "Full Stack Developer",
-      contribution: "Backend Development, AI Integration",
-      emoji: "👨‍💻",
-    },
-    {
-      name: "Team Member 2",
-      role: "Frontend Developer",
-      contribution: "UI/UX Design, React Development",
-      emoji: "👩‍💻",
-    },
-    {
-      name: "Team Member 3",
-      role: "ML Engineer",
-      contribution: "Disease Prediction Model, Data Processing",
-      emoji: "🤖",
-    },
-  ];
-
   const technologies = [
     { name: "Next.js", icon: "⚛️", category: "Frontend" },
     { name: "Flask", icon: "🐍", category: "Backend" },
@@ -36,7 +15,7 @@ export default function AboutPage() {
 
   const features = [
     {
-      title: "AI-Powered Symptom Analysis",
+      title: "AI Powered Symptom Analysis",
       description: "Machine learning model trained on medical datasets to predict potential diseases based on symptoms",
       icon: "🤖",
     },
@@ -64,12 +43,6 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="py-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="inline-block mb-6 rounded-full bg-gradient-to-r from-[#0DAB83]/10 to-[#117F9E]/10 px-6 py-2 border border-[#0DAB83]/20">
-              <span className="text-sm font-bold bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent">
-                🎓 Final Year Project 2025-2026
-              </span>
-            </div>
-
             <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
               About{" "}
               <span className="bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent">
@@ -78,8 +51,8 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-              An AI-powered healthcare platform designed to help users identify potential health conditions 
-              and connect with healthcare professionals - developed as our Final Year Project.
+              An AI powered healthcare platform designed to help users identify potential health conditions 
+              and connect with healthcare professionals.
             </p>
           </div>
         </section>
@@ -100,10 +73,10 @@ export default function AboutPage() {
                 <p>
                   The system uses a trained machine learning model to analyze symptoms and predict potential diseases, 
                   while also connecting users with verified doctors in their area. This bridges the gap between 
-                  self-diagnosis and professional medical consultation.
+                  self diagnosis and professional medical consultation.
                 </p>
                 <p className="text-sm italic text-gray-600">
-                  <strong>Disclaimer:</strong> This is an educational project developed for academic purposes. 
+                  <strong>Disclaimer:</strong> This is a personal portfolio project. 
                   It should not replace professional medical advice, diagnosis, or treatment.
                 </p>
               </div>
@@ -163,38 +136,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team Section */}
-        {/* <section className="py-16 px-4 bg-white/50 backdrop-blur-sm">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
-              Meet Our Team
-            </h2>
-            <p className="text-center text-gray-600 mb-12">
-              Final Year Students - Computer Science Department
-            </p>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {teamMembers.map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:shadow-xl hover:border-[#0DAB83] transition-all duration-300"
-                >
-                  <div className="text-6xl mb-4">{member.emoji}</div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm font-semibold bg-gradient-to-r from-[#0DAB83] to-[#117F9E] bg-clip-text text-transparent mb-3">
-                    {member.role}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    {member.contribution}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         {/* Project Stats */}
         <section className="py-16 px-4">
           <div className="mx-auto max-w-6xl">
@@ -225,28 +166,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Acknowledgments */}
-        <section className="py-16 px-4">
-          <div className="mx-auto max-w-4xl">
-            <div className="bg-white rounded-3xl shadow-xl border-2 border-gray-200 p-8 md:p-12 text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Acknowledgments
-              </h2>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                We would like to express our gratitude to our project supervisor, 
-                the Computer Science Department faculty, and our university for providing 
-                us with the opportunity and resources to develop this project. Special thanks 
-                to all the open-source communities whose tools and libraries made this possible.
-              </p>
-              <div className="inline-block rounded-full bg-gradient-to-r from-[#0DAB83]/10 to-[#117F9E]/10 px-6 py-3 border border-[#0DAB83]/20">
-                <p className="text-sm font-semibold text-gray-900">
-                  🎓 FEDERAL URDU UNIVERSITY OF ARTS, SCIENCES AND TECHNOLOGY - Class of 2022
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="mx-auto max-w-4xl text-center">
@@ -254,7 +173,7 @@ export default function AboutPage() {
               Try HealthNexus Today
             </h2>
             <p className="text-gray-600 mb-8">
-              Experience our AI-powered symptom checker and get personalized health insights
+              Experience our AI powered symptom checker and get personalized health insights
             </p>
             
             <a

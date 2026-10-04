@@ -23,7 +23,8 @@ export async function GET() {
 
 export async function POST(req: Request) {
   const token = (await cookies()).get("token")?.value;
-  const { disease, city, symptoms } = await req.json();
+  const { disease, city, symptoms, severity, description, precautions, doctorAdvice } =
+    await req.json();
 
   if (!token) return NextResponse.json({ error: "No token" }, { status: 401 });
 
@@ -40,8 +41,12 @@ export async function POST(req: Request) {
       history: { 
         disease, 
         city, 
-        symptoms, // Add this
-        at: new Date() 
+        symptoms,
+        severity,
+        description,
+        precautions: Array.isArray(precautions) ? precautions : [],
+        doctorAdvice,
+        at: new Date()
       } 
     },
   });

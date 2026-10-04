@@ -38,6 +38,10 @@ export default function DiseaseCheckerPage() {
               disease: res.data.predicted_disease,
               city: city || "Not specified",
               symptoms: symptoms,
+              severity: res.data.severity_message,
+              description: res.data.description,
+              precautions: res.data.suggestions ?? res.data.precautions ?? [],
+              doctorAdvice: res.data.doctor_advice,
             }),
           });
 
@@ -85,7 +89,7 @@ export default function DiseaseCheckerPage() {
             </h2>
 
             <p className="text-gray-600">
-              Describe your symptoms to receive AI-based health insights and
+              Describe your symptoms to receive AI based health insights and
               nearby doctor recommendations.
             </p>
           </div>

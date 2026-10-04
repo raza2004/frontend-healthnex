@@ -3,7 +3,7 @@ export default function ResultCard({ result }: { result: any }) {
     result.suggestions ?? result.precautions ?? [];
 
   return (
-    <div className="mt-6 p-4 bg-white rounded-lg shadow">
+    <div className="mt-6 p-4 bg-white text-gray-900 rounded-lg shadow">
       <h3 className="text-xl font-semibold mb-2">Prediction Result</h3>
 
       <p>
